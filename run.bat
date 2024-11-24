@@ -7,9 +7,10 @@ if exist "%VENV_DIR%" (
 )
 
 echo Running Python script...
-python main.py
+start /min python app.py
 
 if errorlevel 1 (
     echo An error occurred. Press any key to exit.
     pause >nul
 )
+exit

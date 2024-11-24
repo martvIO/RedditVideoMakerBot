@@ -35,4 +35,6 @@ class elevenlabs:
     def randomvoice(self):
         if self.client is None:
             self.initialize()
-        return random.choice(self.client.voices.get_all().voices).voice_name
+        voices = self.client.voices.get_all().voices
+        print("Available voices:", voices)
+        return random.choice(voices).name

@@ -326,9 +326,10 @@ def make_final_video(
                 current_time += audio_clips_durations[i]
     else:
         for i in range(0, number_of_clips + 1):
+            larger_scale_width = screenshot_width * 1.2  # Adjust this factor as needed
             image_clips.append(
                 ffmpeg.input(f"assets/temp/{reddit_id}/png/comment_{i}.png")["v"].filter(
-                    "scale", screenshot_width, -1
+                    "scale", larger_scale_width, -1
                 )
             )
             image_overlay = image_clips[i].filter("colorchannelmixer", aa=opacity)
