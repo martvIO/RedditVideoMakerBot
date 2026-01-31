@@ -6,7 +6,7 @@ REM Activate the virtual environment
 call .venv\Scripts\activate.bat
 
 REM Run the Python script
-python app.py
+python check.py
 
 REM Pause to keep the window open if it was double-clicked
 pause

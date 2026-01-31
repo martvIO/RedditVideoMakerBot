@@ -62,11 +62,11 @@ function install_macos(){
     fi
     # Install the required packages
     echo "Installing required Packages" 
-    if [! command --version python3 &> /dev/null ]; then
-	    echo "Installing python3"
+    if [! command --version python3.10 &> /dev/null ]; then
+	    echo "Installing python3.10"
 	    brew install python@3.10
     else
-	    echo "python3 already installed."
+	    echo "python3.10 already installed."
     fi
     brew install tcl-tk python-tk
 } 
@@ -74,26 +74,26 @@ function install_macos(){
 # Function to install for arch (and other forks like manjaro)
 function install_arch(){ 
     echo "Installing required packages"
-    sudo pacman -S --needed python3 tk git && python3 -m ensurepip unzip || install_fail
+    sudo pacman -S --needed python3.10 tk git && python3.10 -m ensurepip unzip || install_fail
 } 
 
 # Function to install for debian (and ubuntu)
 function install_deb(){ 
     echo "Installing required packages"
-    sudo apt install python3 python3-dev python3-tk python3-pip unzip || install_fail
+    sudo apt install python3.10 python3.10-dev python3.10-tk python3.10-pip unzip || install_fail
 } 
 
 # Function to install for fedora (and other forks)
 function install_fedora(){ 
     echo "Installing required packages" 
-    sudo dnf install python3 python3-tkinter python3-pip python3-devel unzip || install_fail
+    sudo dnf install python3.10 python3.10-tkinter python3.10-pip python3.10-devel unzip || install_fail
 } 
 
 # Function to install for centos (and other forks based on it)
 function install_centos(){
     echo "Installing required packages"
-    sudo yum install -y python3 || install_fail
-    sudo yum install -y python3-tkinter epel-release python3-pip unzip|| install_fail
+    sudo yum install -y python3.10 || install_fail
+    sudo yum install -y python3.10-tkinter epel-release python3.10-pip unzip|| install_fail
 } 
 
 function get_the_bot(){ 
@@ -123,8 +123,8 @@ function install_playwright(){
     # cd into the directory where the script is downloaded
     cd RedditVideoMakerBot-master
     # run the install script
-    python3 -m playwright install 
-    python3 -m playwright install-deps 
+    python3.10 -m playwright install 
+    python3.10 -m playwright install-deps 
     # give a note
     printf "Note, if these gave any errors, playwright may not be officially supported on your OS, check this issues page for support\nhttps://github.com/microsoft/playwright/issues"
     if [ -x "$(command -v pacman)" ]; then
@@ -157,7 +157,7 @@ function install_deps(){
     # else
     else
         # print an error message and exit
-        printf "Your OS is not supported\n Please install python3, pip3 and git manually\n After that, run the script again with the -pb option to install python and playwright dependencies\n If you want to add support for your OS, please open a pull request on github\n
+        printf "Your OS is not supported\n Please install python3.10, pip3 and git manually\n After that, run the script again with the -pb option to install python and playwright dependencies\n If you want to add support for your OS, please open a pull request on github\n
 https://github.com/elebumm/RedditVideoMakerBot"
         exit 1
     fi
@@ -224,7 +224,7 @@ function install_main(){
             fi
         fi
         cd RedditVideoMakerBot-master
-        python3 main.py
+        python3.10 main.py
     fi
 }
 

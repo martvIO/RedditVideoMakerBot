@@ -349,7 +349,3 @@ ffmpeg.exe
 ffplay.exe
 ffprobe.exe
 chromedriver.exe
-/video_creation/data/cookie-dark-mode.json
-/video_creation/data/cookie-light-mode.json
-/video_creation/data/videos.json
-/assets/backgrounds
